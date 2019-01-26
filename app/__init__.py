@@ -9,7 +9,7 @@ import os
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     cors = CORS(app)
-    # app.config['SQLALCHEMY_DATABASE_URI'] = 'polluwatch@35.184.135.100/polluwatch-db1'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'shxthappens:us-central1:shxthappensdb'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.config['SECRET_KEY'] = 'dev'
     app.config['CORS_HEADERS'] = 'Content-Type'

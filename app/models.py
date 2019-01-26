@@ -12,7 +12,7 @@ class User(Base):
     # Init func should be called for User creation after new user registers
     def __init__(self, response):
         self.username = response['username']
-        slef.rank     = BASE_RANK
+        self.rank     = BASE_RANK
 
 
 
