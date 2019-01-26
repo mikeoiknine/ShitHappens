@@ -29,10 +29,14 @@ def create_app(test_config=None):
     from . import data
     app.register_blueprint(data.bp)
 
+    from . import auth
+    app.register_blueprint(auth.bp)
+
     @app.route('/')
     def hello():
         return render_template('index.html')
 
+    app.add_url_rule('/', endpoint='index')
     @app.teardown_appcontext
     def shutdown_session(exception=None):
         db_session.remove()
