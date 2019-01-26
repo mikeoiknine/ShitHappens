@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask_cors import CORS, cross_origin
 from flask_sqlalchemy import SQLAlchemy
 from .database import db_session
@@ -26,12 +26,12 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    #from . import data
-    #app.register_blueprint(data.bp)
+    from . import data
+    app.register_blueprint(data.bp)
 
     @app.route('/')
     def hello():
-        return "Welcome to the server"
+        return render_template('index.html')
 
     @app.teardown_appcontext
     def shutdown_session(exception=None):
