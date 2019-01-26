@@ -2,11 +2,25 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: .75rem;
 }
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 
 body{
   background-color: white;
+  font-family: 'Roboto', sans-serif;
+
+}
+nav{
+  background-color: transparent;
 }
 
+.carousel-caption{
+  width: 550px;
+  left: 15%;
+  top: 50% !important;
+  transform: translateY(-50%);
+  text-align: left;
+  bottom: initial;
+}
 .card-signin {
   border: 0;
   border-radius: 1rem;
