@@ -1,47 +1,48 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Poop Finder</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- Latest compiled JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
- </head>
-
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">Shit Happens</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Shit</a></li>
-    </ul>
-  </div>
-</nav>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <link rel="stylesheet" href="../../static/style.css">
+</head>
 
 
-<body style="background-color: #fff;">
-  <h2 class="jumbotron text-center">POOP</h2>
-
-  <form method="post">
 
 <div class="row">
     <div class="col-lg-4">
     <h3 style="padding-left: 10px;">Sign In</h3>
     <label for="username" style="padding-top: 10px; padding-right:39px; padding-left: 10px"><b>username</b></label>
     <input type="text" placeholder="Enter username" name="username" id="username" required><br>
+              <div class="form-label-group">
+                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <label for="inputPassword">Password</label>
+              </div>
 
-    <label for="pass" style="padding: 10px"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required><br>
-
-  <div class="login" style="padding: 5px 10px;">
-    <button type="submit">Log in</button>
-    <span class="pass" style="background-color:#fff; padding-left: 20px;"><a href="#">Forgot password?</a></span>
+              <div class="custom-control custom-checkbox mb-3">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Remember password</label>
+              </div>
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
+              <hr class="my-4">
+              <button class="btn btn-lg btn-google btn-block text-uppercase" type="submit"><i class="fab fa-google mr-2"></i>
+                Sign in with Google</button>
+              <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit"><i class="fab fa-facebook-f mr-2"></i>
+                Sign in with Facebook</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
-</div>
-
-</form>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
 </body>
-</html>
 
+</html>
