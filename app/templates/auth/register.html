@@ -16,7 +16,35 @@
   </div>
 </nav>
 
+        <script>
+            function checkPass() {
+                var get_elem = document.getElementById,
+                pass1 = document.getElementById('password'),
+                pass2 = document.getElementById('password_confirm'),
+                message = document.getElementById('confirmMessage'),
+                colors = {
+                    goodColor: "#fff",
+                    goodColored: "#087a08",
+                    badColor: "#fff",
+                    badColored:"#ed0b0b"
+                },
+                strings = {
+                    "confirmMessage": ["Matching", "Not Matching"]
+                };
 
+                if(password.value === password_confirm.value && (password.value + password_confirm.value) !== "") {
+                    password_confirm.style.backgroundColor = colors["goodColor"];
+                    message.style.color = colors["goodColored"];
+                    message.innerHTML = strings["confirmMessage"][0];
+                } else if(!(password_confirm.value === "")) {
+                    password_confirm.style.backgroundColor = colors["badColor"];
+                    message.style.color = colors["badColored"];
+                    message.innerHTML = strings["confirmMessage"][1];
+                } else {
+                    message.innerHTML = "";
+                }
+            }
+        </script>
 <body style="background-color: #fff;">
   <h2 class="jumbotron text-center">Poop?</h2>
 
@@ -29,8 +57,11 @@
     <input type="text" placeholder="Enter username" name="username" id="username" required><br>
 
     <label for="pass" style="padding: 10px"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="password" id="password" required><br>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required onkeyup="checkPass()"><br>
 
+    <label for="pass" style="padding: 10px"><b>Re-Enter Password</b></label>
+    <input type="password" placeholder="Re-Enter Password" name="password_confirm" id="password_confirm" required onkeyup="checkPass()"><br>
+    <span id="confirmMessage" class="confirmMessage"></span>
   <div class="register" style="padding: 5px 10px;">
     <button type="submit">Sign up</button>
     <span class="pass" style="background-color:#fff; padding-left: 20px;">
