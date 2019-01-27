@@ -51,11 +51,6 @@ function showPosition(position) {
             position: { lat: position.coords.latitude, lng: position.coords.longitude }
         });
         marker.addListener('click', toggleBounce);
-
 }
-
-
-
-
 
 
