@@ -1,32 +1,47 @@
 from flask import (
-    Blueprint, request, redirect, url_for, current_app, Response
+    Blueprint, request, redirect, url_for, current_app, Response, session, g
 )
 import json
 from .database import db_session
 from .models import Toilet, Rating
+from .auth import login_required
 
 bp = Blueprint('data', __name__, url_prefix='/data')
 
-@bp.route('/addtoilet', methods=['POST'])
-def update_toilet():
-    response = request.get_json()
 
-    print(response)
+@bp.route('/contribute', methods=['POST'])
+def contribute():
+    session['t'] = request.form.get('toilet-form', '')
 
-    # Validate json data
-    if response is None:
-        return "Invalid JSON data"
+    if g.user is None:
+        return redirect(url_for('auth.login'))
 
-    toilet = Toilet(response)
+    update_toilet(session.get('t'))
+    return redirect(url_for('index'))
 
-    # Update db
-    db_session.add(toilet)
-    db_session.commit()
-    print('Record was added successfully')
 
-    return str(toilet.id)
+
+def update_toilet(flag):
+    print(flag)
+    # response = request.get_json()
+
+    #print(response)
+
+    ## Validate json data
+    #if response is None:
+    #    return "Invalid JSON data"
+
+    #toilet = Toilet(response)
+
+    ## Update db
+    #db_session.add(toilet)
+    #db_session.commit()
+    #print('Record was added successfully')
+    return "ok"
+    #return str(toilet.id)
 
 @bp.route('/addrating/<id>', methods=['POST'])
+@login_required
 def update_rating(id):
     response = request.get_json()
 

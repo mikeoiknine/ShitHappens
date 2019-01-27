@@ -10,14 +10,32 @@
 
 
 
-<div class="row">
-    <div class="col-lg-4">
-    <h3 style="padding-left: 10px;">Sign In</h3>
-    <label for="username" style="padding-top: 10px; padding-right:39px; padding-left: 10px"><b>username</b></label>
-    <input type="text" placeholder="Enter username" name="username" id="username" required><br>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Shit Happens</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Shit</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+        <div class="card card-signin my-5">
+          <div class="card-body">
+            <h5 class="card-title text-center">Sign In</h5>
+            <form class="form-signin" method="post">
               <div class="form-label-group">
-                <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                <label for="inputPassword">Password</label>
+                <input type="username" id="username" name="username" class="form-control" placeholder="username" required autofocus>
+                <label for="username">User name</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                <label for="password">Password</label>
               </div>
 
               <div class="custom-control custom-checkbox mb-3">
