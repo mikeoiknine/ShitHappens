@@ -11,16 +11,18 @@ body{
 }
 nav{
   background-color: transparent;
-}
+  }
 
-.carousel-caption{
+.carousel-caption {
   width: 550px;
   left: 15%;
   top: 50% !important;
   transform: translateY(-50%);
   text-align: left;
   bottom: initial;
-}
+  }
+
+
 .card-signin {
   border: 0;
   border-radius: 1rem;
