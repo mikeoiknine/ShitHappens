@@ -53,7 +53,6 @@ def login():
 
         if not username or not password:
             error = 'username and password are required'
-            return str("USERNAME AND PASSWORD YOU SHIT")
             flash(error)
 
         # get db handle
@@ -106,6 +105,7 @@ def get_users():
     return Response(json.dumps([{
         'username'       : query.username,
         'password'       : query.password,
+        'ratings made'   : query.rating_count,
         'rank'           : query.rank}
         for query in User.query.all()]), mimetype='application/json')
 
